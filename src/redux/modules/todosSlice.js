@@ -5,15 +5,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
  */
 import { waitTwoSeconds } from '../../utils';
 
-export const __addToDo = createAsyncThunk('__addToDo', async (payload, thunkAPI) => {
+export const __addToDo = createAsyncThunk(
+  '__addToDo', 
+  async (payload, thunkAPI) => {
   await waitTwoSeconds();
   return payload;
 });
 
 export const __deleteTodo = createAsyncThunk(
-  '__deleteToDo',
-  async (payload, thunkAPI) => { }
-);
+  '__deleteToDo', 
+  async (id, thunkAPI) => id);
+
 
 const initialState = {
   list: [],
